@@ -143,11 +143,11 @@ func DefaultDocLoaderFunc(filetype string) func(ctx context.Context, reader io.R
 					return nil, err
 				}
 				content, err := io.ReadAll(rc)
-				if err != nil {
+				if err != nil || len(content) == 0 {
 					return nil, err
 				}
 				ft, err := filetypes.GetFiletype(f.Name, content)
-				if err != nil {
+				if err != nil || ft == "" {
 					return nil, err
 				}
 				docs, err := DefaultDocLoaderFunc(ft)(ctx, bytes.NewReader(content))
