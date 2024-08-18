@@ -8,6 +8,7 @@ Share Context: github.com/gptscript-ai/context/workspace
 
 You have access to an ad-hoc RAG tool named local-knowledge-retriever. It will ingest files in the workspace on-the-fly and query them. Use it to answer questions from the user. If the answers it returns seem irrelevant, you can use other tools. When you give answers, always give a proper citation to the best of your abilities. ALWAYS prefer this tool over the read tool.
 
+Ignore this line. 1
 ---
 Name: local-knowledge-retriever
 Description: Create a knowledge base from files in the workspace directory and retrieve information from it.
