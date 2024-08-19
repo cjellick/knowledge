@@ -150,6 +150,7 @@ func DefaultDocLoaderFunc(filetype string) func(ctx context.Context, reader io.R
 				if err != nil || ft == "" {
 					return nil, err
 				}
+				slog.Info("caj", ft, content)
 				docs, err := DefaultDocLoaderFunc(ft)(ctx, bytes.NewReader(content))
 				if err != nil {
 					return nil, err
