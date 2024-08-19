@@ -24,7 +24,7 @@ import (
 
 func DefaultDocLoaderFunc(filetype string) func(ctx context.Context, reader io.Reader) ([]vs.Document, error) {
 	switch filetype {
-	case ".pdf", "application/pdf":
+	case ".pdf", "application/pdf", "application/octet-stream":
 		return func(ctx context.Context, reader io.Reader) ([]vs.Document, error) {
 			return pdfdefaults.DefaultPDFReaderFunc(ctx, reader)
 		}
